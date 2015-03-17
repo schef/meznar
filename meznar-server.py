@@ -4,27 +4,39 @@ import datetime
 
 import pygame
 pygame.mixer.init()
-pygame.mixer.music.load("school_bell.ogg")
+songname = "school_bell.ogg"
+pygame.mixer.music.load(songname)
 
 class meznar(object):
   def play(self):
     if pygame.mixer.music.get_busy():
-      print("still playing")
-      return("still playing")
+      #time = datetime.timedelta(pygame.mixer.music.get_pos()/1000000)
+      time = pygame.mixer.music.get_pos()/1000
+      text = ("still playing", songname, "at", str(time), "seconds")
+      print(text)
+      return(text)
     else:
       pygame.mixer.music.play()
-      print("play", datetime.datetime.now())
-      return("play")
+      text = ("playing", songname, "at", datetime.datetime.now())
+      print(text)
+      return(text)
   def stop(self):
     if pygame.mixer.music.get_busy() == 0:
-      print("nothing is playing")
-      return("nothing is playing")
+      text = ("nothing is playing")
+      print(text)
+      return(text)
     else:
       pygame.mixer.music.fadeout(1000)
-      print("stop")
-      return("stop")
+      text = ("stoping by force")
+      print(text)
+      return(text)
   def load(self, filename):
-    pygame.mixer.music.load(filename)
+    global songname
+    songname = filename
+    text = ("changing song to", songname)
+    pygame.mixer.music.load(songname)
+    print(text)
+    return(text)
 
 zvonar = meznar()
 
