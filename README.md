@@ -7,7 +7,9 @@ Python implementacija crkvenih zvona.
 
 `sudo pip install schedule`
 
-`sudo pacman -S pygame`
+`sudo pacman -S python-pyro`
+
+`yaourt -S python-serpent`
 
 `yaourt -S python-pygame-hg`
 
