@@ -22,7 +22,7 @@ pa server `python meznar-server.py`
 i onda mores `python meznar-shell.py` i/ili `python meznar-clock.py`
 
 ### meznar-shell.py
-komande su play i stop
+komande su play, stop i load za promjenu pjesme zvonjenja
 
 ### meznar-clock.py
 u tom se fajlu definira kad bu zvonilo. mores sprobati deti vuru tipa koja bude dosla 17:47 u `schedule.every().day.at("17:15").do(hajde_pozvoni)`
