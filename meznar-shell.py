@@ -11,5 +11,8 @@ try:
       print(zvonar.play())   # call method normally
     elif command == "stop":
       print(zvonar.stop())   # call method normally
+    elif command == "load":
+      filename = input("deni tocan relative path ili bolje apsolut: ")
+      zvonar.load(filename)
 except KeyboardInterrupt:
   print("Bye.")

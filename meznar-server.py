@@ -23,6 +23,8 @@ class meznar(object):
       pygame.mixer.music.fadeout(1000)
       print("stop")
       return("stop")
+  def load(self, filename):
+    pygame.mixer.music.load(filename)
 
 zvonar = meznar()
 
@@ -31,7 +33,7 @@ ns=Pyro4.locateNS()
 uri=daemon.register(zvonar)   # register the greeting object as a Pyro object
 ns.register("meznar", uri)
 
-print("Ready. Object uri =", uri)      # print the uri so we can use it in the client later
+#print("Ready. Object uri =", uri)      # print the uri so we can use it in the client later
 try:
   print("Ready.")
   daemon.requestLoop()                  # start the event loop of the server to wait for calls
